@@ -1,0 +1,34 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Reps</th>
+        <th>Sets</th>
+        <th>Rest Period</th>
+        <th>Example</th>
+        <% if current_user.admin? %>
+          <th>Actions</th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @workout.exercises.each do |exercise| %>
+        <tr>
+          <td><%= exercise.title %></td>
+          <td><%= exercise.description %></td>
+          <td><%= exercise.repetitions %></td>
+          <td><%= exercise.sets %></td>
+          <td><%= exercise.rest_period %></td>
+          <td><%= exercise.example_url %></td>
+          <% if current_user.admin? %>
+            <td><%= link_to "Remove", exercise_workout_path(exercise_id: exercise.id, workout_id: @workout.id), method: :delete, class: "btn btn-xs btn-danger" %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% if current_user.admin? %>
+    <%= link_to "Add New Exercise", new_exercise_path(workout_id: @workout.id), method: :get, class: "btn btn-xs btn-success" %>
+  <% end %>
+  

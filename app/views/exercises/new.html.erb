@@ -1,0 +1,10 @@
+<%= simple_form_for @exercise do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :repetitions %>
+  <%= f.input :sets %>
+  <%= f.input :example_url %>
+  <%= f.input :rest_period %>
+  <%= hidden_field_tag 'workout_id', @workout_id %>
+  <%= f.button :submit, class: "btn btn-m btn-success"%>
+<% end %>
