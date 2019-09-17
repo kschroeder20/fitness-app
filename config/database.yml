@@ -15,7 +15,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: fitness_app
+  database: fitness_app_dev
   pool: 5
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -39,12 +39,12 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: fitness_app
+  database: fitness_app_test
   pool: 5
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: fitness_app
+  database: fitness_app_prod
   pool: 5
 
