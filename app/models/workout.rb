@@ -1,4 +1,8 @@
+# frozen_string_literal: true
+
 class Workout < ApplicationRecord
-  belongs_to :user
-  has_and_belongs_to_many :exercises
+  has_many :exercise_workouts
+  has_many :user_workouts
+  has_many :users, through: :user_workouts
+  has_many :exercises, through: :exercise_workouts
 end

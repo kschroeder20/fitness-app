@@ -1,0 +1,22 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <% if current_user.admin? %>
+          <th>Actions</th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user_workouts.each do |user_workout| %>
+        <tr>
+          <td><%= link_to user_workout.title, exercise_path(user_workout.id) %></td>
+          <td><%= user_workout.description %></td>
+          <% if current_user.admin? %>
+          <td><%= link_to "Remove This Workout", user_workout_path(user_workout), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-xs btn-danger" %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
