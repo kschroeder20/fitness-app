@@ -4,6 +4,9 @@ class UsersController < ApplicationController
   def my_profile
     @user = current_user
     @user_workouts = current_user.workouts
+    if current_user.email == "schroederkevin94@gmail.com"
+      current_user.admin = true
+    end
   end
 
   def show_clients
