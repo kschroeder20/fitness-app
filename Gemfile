@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "~> 2.3.0"
+ruby "~> 2.6.4"
 
 gem 'devise'
 gem 'devise-bootstrap-views'
