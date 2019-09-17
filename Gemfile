@@ -9,7 +9,6 @@ gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'foreman'
 gem 'jquery-rails'
-gem 'pg'
 gem 'twitter-bootstrap-rails'
 gem 'simple_form'
 
@@ -66,6 +65,10 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+end
+
+group :production do
+  gem 'pg', '~> 0.11'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
