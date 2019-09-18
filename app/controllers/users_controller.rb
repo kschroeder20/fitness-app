@@ -4,8 +4,9 @@ class UsersController < ApplicationController
   def my_profile
     @user = current_user
     @user_workouts = current_user.workouts
-    if current_user.email == "schroederkevin94@gmail.com"
-      current_user.admin = true
+    if @user.email == "schroederkevin94@gmail.com"
+      @user.admin = true
+      @user.save
     end
   end
 
