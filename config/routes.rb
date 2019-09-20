@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :workouts
   resources :exercises
 
-  root 'welcome#index'
+  root 'users#my_profile'
   get 'my_profile', to: 'users#my_profile'
   get 'show_clients', to: 'users#show_clients'
   get 'show_client_workouts', to: 'users#show_client_workouts'
